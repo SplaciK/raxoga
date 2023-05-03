@@ -1656,3 +1656,13 @@ input, select, textarea {
 		body.is-preload #footer {
 			opacity: 0;
 		}
+
+.kolumienka {
+  float: left;
+  width: 33.33%;
+}
+.tabelka:after {
+  content: "";
+  display: table;
+  clear: both;
+}
