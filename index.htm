@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAXOGA</title>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            flex-direction: column;
+        }
+
+        h1 {
+            font-size: 3em;
+            margin: 0;
+            cursor: pointer;
+        }
+
+        hr {
+            width: 100%;
+            border: 1px solid white;
+            margin: 10px 0;
+        }
+
+        p {
+            font-size: 1em;
+            margin: 10px 0;
+        }
+
+        .buttons {
+            margin-top: 10px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px;
+            border: 2px solid white;
+            color: white;
+            text-decoration: none;
+            font-size: 1em;
+            cursor: pointer;
+        }
+
+        .button:hover {
+            background-color: white;
+            color: black;
+        }
+    </style>
+    <script>
+        function changeQuote(quote) {
+            document.getElementById('quote').innerText = quote;
+        }
+
+        function resetQuote() {
+            document.getElementById('quote').innerText = "Internetowa Społeczność Graczy. Gildie, Drużyny i Serwery.";
+        }
+    </script>
+</head>
+<body>
+    <h1 onclick="resetQuote()">RAXOGA</h1>
+    <hr>
+    <p id="quote">Internetowa Społeczność Graczy. Gildie, Drużyny i Serwery.</p>
+    <hr>
+    <div class="buttons">
+        <a href="#" class="button" onclick="changeQuote('Cierpliwość jest kluczem do sukcesu.1')">Tekst 1</a>
+        <a href="#" class="button" onclick="changeQuote('Cierpliwość jest kluczem do sukcesu.2')">Tekst 2</a>
+        <a href="#" class="button" onclick="changeQuote('Cierpliwość jest kluczem do sukcesu.3')">Tekst 3</a>
+        <a href="#" class="button" onclick="changeQuote('Cierpliwość jest kluczem do sukcesu.4')">Tekst 3</a>
+    </div>
+</body>
+</html>
