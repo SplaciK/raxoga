@@ -54,27 +54,40 @@
             background-color: white;
             color: black;
         }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+        #quote {
+            height: 200px;
+        }
     </style>
     <script>
-        function changeQuote(quote) {
-            document.getElementById('quote').innerText = quote;
+        function changeQuote(links) {
+            const quoteElement = document.getElementById('quote');
+            let htmlContent = '';
+            links.forEach(link => {
+                htmlContent += `<a href="${link.url}" target="_blank">${link.text}</a><br>`;
+            });
+            quoteElement.innerHTML = htmlContent;
         }
 
         function resetQuote() {
-            document.getElementById('quote').innerText = "Internetowa Społeczność Graczy. Gildie, Drużyny i Serwery.";
+            const quoteElement = document.getElementById('quote');
+            quoteElement.innerText = "Internetowa Społeczność Graczy. Gildie, Drużyny i Serwery.";
         }
     </script>
 </head>
 <body>
     <h1 onclick="resetQuote()">RAXOGA</h1>
+        <div class="buttons">
+        <a href="#" class="button" onclick="changeQuote([{url: 'https://facebook.com/raxoga', text: 'FACEBOOK - PROFIL'}, {url: 'https://facebook.com/groups/raxoga', text: 'FACEBOOK - GRUPA'}, {url: 'https://youtube.com/@RAXOGA', text: 'YOUTUBE'}, {url: 'https://twitter.com/theraxoga', text: 'TWITTER'}, {url: 'https://tiktok.com/@raxoga', text: 'TIK TOK'}, {url: 'https://twitch.tv/raxoga', text: 'TWITCH'}, {url: 'https://reddit.com/r/raxoga', text: 'REDDIT'}])">SOCIAL</a>
+        <a href="#" class="button" onclick="changeQuote([{url: 'https://discord.com/invite/Kfug9GePRZ', text: 'DISCORD'}, {url: 'https://rvlt.gg/4DTT1Bk3', text: 'REVOLT'}, {url: 'https://guilded.gg/i/LExV817k', text: 'GUILDED'}, {url: 'https://insights.gg/code/ihTrQ8ha', text: 'INSIGHTS'}, {url: 'https://qchat.rizon.net/?channels=#RAXOGA', text: 'IRC'}, {url: 'https://matrix.to/#/#raxoga-local:matrix.org', text: 'ELEMENT - PRYWATNY'}, {url: 'https://matrix.to/#/#raxoga:matrix.org', text: 'ELEMENT - PUBLICZNY'}])">SERWERY</a>
+        <a href="#" class="button" onclick="changeQuote([{url: 'https://steamcommunity.com/groups/RAXOGA', text: 'STEAM - GRUPA'}, {url: 'https://steamcommunity.com/chat/invite/iWg4oiou', text: 'STEAM - CHAT'}, {url: 'https://socialclub.rockstargames.com/crew/raxoga', text: 'RGSC'}, {url: 'https://play.eslgaming.com/team/12566663/', text: 'ESL'}, {url: 'https://www.faceit.com/pl/teams/8cab4c49-9100-4452-959b-433bf90f3a11', text: 'FACEIT - DRUŻYNA'}, {url: 'https://www.faceit.com/pl/hub/251cf69d-e78f-4402-9df2-63f6d5e10e8a/RAXOGA', text: 'FACEIT - HUB'}, {url: 'https://blizzard.com/invite/dMgGpdS7Jo', text: 'BLIZZARD'}, {url: 'https://account.xbox.com/pl-pl/clubs/profile?clubid=3379880482650395', text: 'XBOX'},{url: 'https://trackmania.io/#/clubs/757', text: 'TRACKMANIA'}, {url: 'https://account.xbox.com/pl-pl/clubs/profile?clubid=3379837552422663', text: 'FORZA HORIZON 5'}])">GAMING</a>
+        <a href="#" class="button" onclick="changeQuote([{url: 'https://t.me/raxoga', text: 'TELEGRAM'}, {url: 'mailto:kontakt@raxoga.net', text: 'MAIL'}])">KONTAKT</a>
+    </div>
     <hr>
     <p id="quote">Internetowa Społeczność Graczy. Gildie, Drużyny i Serwery.</p>
-    <hr>
-    <div class="buttons">
-        <a href="#" class="button" onclick="changeQuote('facebook.com/raxoga')">SOCIAL</a>
-        <a href="#" class="button" onclick="changeQuote('reddit.com/r/raxoga')">SUB</a>
-        <a href="#" class="button" onclick="changeQuote('discord.com/invite/Kfug9GePRZ')">CHAT</a>
-        <a href="#" class="button" onclick="changeQuote('steamcommunity.com/groups/RAXOGA')">STEAM</a>
-    </div>
 </body>
 </html>
